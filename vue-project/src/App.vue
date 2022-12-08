@@ -28,7 +28,7 @@ onBeforeMount(async () => {
           <ul class="navbar-nav">
             <div v-for="team in teams">
               <li class="nav-item">
-                <router-link class="nav-link" :to="`/${team.id}`">{{ team.title }}</router-link>
+                <router-link class="nav-link" :to="`/team/${team.id}`">{{ team.title }}</router-link>
               </li>
             </div>
           </ul>

@@ -5,7 +5,6 @@ require_once "models/Team.php";
 class TeamRestController
 {
     public function process($id=null) {
-        echo $id;
         
         $method = $_SERVER['REQUEST_METHOD'];
 

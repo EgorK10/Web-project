@@ -14,9 +14,12 @@ const props = defineProps({
         <div class="card-body">
             <h5 class="card-title ">{{ team.title }}</h5>
 
-            <a href="#" class="d-flex justify-content-center btn btn-primary mb-2  p-1 btn-dark">{{ team.title }}</a>
-            <a href="#" class="d-flex justify-content-center btn btn-primary mb-2  p-1 btn-dark ">Фото</a>
-            <a href="#" class="d-flex justify-content-center btn btn-primary mb-2  p-1 btn-dark ">Информация</a>
+            <router-link :to="`/team/${team.id}`"
+                class="d-flex justify-content-center btn btn-primary mb-2  p-1 btn-dark">{{ team.title }}</router-link>
+            <router-link :to="`/team/${team.id}#image`"
+                class="d-flex justify-content-center btn btn-primary mb-2  p-1 btn-dark ">Фото</router-link>
+            <router-link :to="`/team/${team.id}#description`"
+                class="d-flex justify-content-center btn btn-primary mb-2  p-1 btn-dark ">Информация</router-link>
         </div>
     </div>
 
