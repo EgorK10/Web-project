@@ -3,17 +3,17 @@ import { RouterLink, RouterView } from 'vue-router'
 import { onBeforeMount, ref } from 'vue';
 import axios from "axios";
 
-const teams = ref([]);
+const countries = ref([]);
 
 onBeforeMount(async () => {
-  let request = (await axios.get("/api/teams")).data
-  teams.value = request.items
+  let request = (await axios.get("/api/countries")).data
+  countries.value = request.items
 })
 </script>
 
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <router-link class="navbar-brand" to="/">
           <img class="logo" src="../public/images/logo.jpg" alt="">
@@ -26,9 +26,9 @@ onBeforeMount(async () => {
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <div v-for="team in teams">
+            <div v-for="country in countries">
               <li class="nav-item">
-                <router-link class="nav-link" :to="`/team/${team.id}`">{{ team.title }}</router-link>
+                <router-link class="nav-link" :to="`/?countryId=${country.id}`">{{ country.name }}</router-link>
               </li>
             </div>
           </ul>

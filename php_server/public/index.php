@@ -1,6 +1,7 @@
 <?php
 require "../vendor/autoload.php";
 require_once "../TeamsRestController.php";
+require_once "../CountriesRestController.php";
 
 
 use Illuminate\Database\Capsule\Manager;
@@ -23,5 +24,10 @@ $matches = [];
 if(preg_match("#/api/teams/?(\d+)?#", $url, $matches)) {
     $id = $matches[1] ?? null;
     $controller = new TeamRestController();
+    $controller->process($id);
+}
+if(preg_match("#/api/countries/?(\d+)?#", $url, $matches)) {
+    $id = $matches[1] ?? null;
+    $controller = new CountriesRestController();
     $controller->process($id);
 }

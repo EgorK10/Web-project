@@ -24,3 +24,11 @@ const props = defineProps({
     </div>
 
 </template>
+
+<style>
+.card-img-top {
+width: 300px;
+height: 30vh;
+object-fit: cover;
+}
+</style>
